@@ -211,4 +211,37 @@
 \end{equation}
 哈密顿量守恒
 
+\section{Noether定理，广义动量}
+
+由\ref{eq:33}
+\begin{equation}
+  \label{eq:37}
+  \frac{\dif L}{\dif t} = \frac{\dif}{\dif t} \left( \sum\limits_{j}  \frac{\partial L}{\partial \dot{q_{j}}} \dot{q_{j}} \right) + \frac{\partial L}{\partial t}
+\end{equation}
+可以得到
+\begin{equation}
+  \label{eq:38}
+  \delta L= \frac{\dif}{\dif t} \left( \sum\limits_{j}  \frac{\partial L}{\partial \dot{q_{j}}} \delta q_{j} \right)
+\end{equation}
+当空间具有平移不变性时，即虚位移的产生对于拉格朗日量没有影响时
+\begin{equation}
+  \label{eq:39}
+  \delta L =0
+\end{equation}
+因此
+\begin{equation}
+  \label{eq:40}
+  \frac{\dif}{\dif t} \left( \sum\limits_{j}  \frac{\partial L}{\partial \dot{q_{j}}} \delta q_{j} \right) = 0
+\end{equation}
+即
+\begin{equation}
+  \label{eq:41}
+  \sum\limits_{j}  \frac{\partial L}{\partial \dot{q_{j}}} \delta q_{j} = \mathrm{const}
+\end{equation}
+因此定义广义动量
+\begin{equation}
+  \label{eq:42}
+  p_{j} = \frac{\partial L}{\partial \dot{q_{j}}}
+\end{equation}
+则$p_{j} = \mathrm{const}$，广义动量守恒
 \end{document}
