@@ -414,4 +414,89 @@ $x$和$y$之间有约束
 \end{equation}
 为约束力
 
+\section{哈密顿动力学}
+
+\subsection{广义动量}
+由广义动量的定义\ref{eq:42}和拉格朗日方程\ref{eq:28}
+\begin{equation}
+  \label{eq:75}
+  p_{j} = \frac{\partial L}{\partial \dot{q_{j}}}
+\end{equation}
+\begin{equation}
+  \label{eq:76}
+  \frac{\dif}{\dif t} \left( \frac{\partial L}{\partial \dot{q_{j}}} \right) - \frac{\partial L}{\partial q_{j}} = 0
+\end{equation}
+得到
+\begin{equation}
+  \label{eq:77}
+  \frac{\dif}{\dif t} \left( \frac{\partial L}{\partial \dot{q_{j}}} \right) = \frac{\partial L}{\partial q_{j}}
+\end{equation}
+进而得到
+\begin{equation}
+  \label{eq:78}
+  \dot{p}_{j} = \frac{\partial L}{\partial q_{j}}
+\end{equation}
+
+\subsection{哈密顿正则方程}
+
+由\ref{eq:35}，系统的哈密顿量
+\begin{equation}
+  \label{eq:79}
+  H \left( p_{j},q_{j},t \right) = \sum\limits_{j} \frac{\partial L}{\partial \dot{q_{j}}} \dot{q_{j}} -L
+\end{equation}
+将\ref{eq:75}代入
+\begin{equation}
+  \label{eq:80}
+  H = \sum\limits_{j} p_{j} \dot{q_{j}} -L \left( q_{j},\dot{q}_{j},t \right)
+\end{equation}
+对\ref{eq:80}求全微分
+\begin{equation}
+  \label{eq:81}
+  \dif H  = \sum\limits_{j} \left(  \dot{q_{j}} \dif p_{j} + p_{j} \dif \dot{q}_{j} - \dfrac{\partial L}{\partial q_{j}} \dif q_{j} - \dfrac{\partial L}{\partial \dot{q}_{j}} \dif \dot{q}_j \right) - \dfrac{\partial L}{\partial t} \dif t
+\end{equation}
+将\ref{eq:75}和\ref{eq:78}带入
+\begin{equation}
+  \label{eq:82}
+  \dif H = \sum\limits_{j} \left(  \dot{q_{j}} \dif p_{j} + p_{j} \dif \dot{q}_{j} - \dot{p}_{j} \dif q_{j} - p_{j} \dif \dot{q}_j \right) - \dfrac{\partial L}{\partial t} \dif t
+\end{equation}
+整理得到
+\begin{equation}
+  \label{eq:83}
+  \dif H = \sum\limits_{j} \left(  \dot{q_{j}} \dif p_{j} - \dot{p}_{j} \dif q_{j} \right) - \dfrac{\partial L}{\partial t} \dif t
+\end{equation}
+又因为
+\begin{equation}
+  \label{eq:84}
+  \dif H = \sum\limits_{j}\left( \dfrac{\partial H}{\partial p_{j}} \dif p_{j} + \dfrac{\partial H}{\partial q_{j}} \dif q_{j} \right) + \dfrac{\partial H}{\partial t} 
+\end{equation}
+因此我们得到哈密顿正则方程
+\begin{equation}
+  \label{eq:85}
+  \dot{q}_{j} = \dfrac{\partial H}{\partial p_{j}}
+\end{equation}
+\begin{equation}
+  \label{eq:86}
+  \dot{p}_{j} =  \dfrac{\partial H}{\partial q_{j}}
+\end{equation}
+\begin{equation}
+  \label{eq:87}
+  \dfrac{\dif H}{\dif t} = - \dfrac{\dif L}{\dif t}
+\end{equation}
+
+\subsection{泊松括号}
+
+\begin{equation}
+  \label{eq:88}
+  \left\{ u, v \right\} = \sum\limits_{j} \left( \dfrac{\partial u}{\partial q_{j}} \dfrac{\partial v}{\partial p_{j}} - \dfrac{\partial u}{\partial p_{j}} \dfrac{\partial v}{\partial q_{j}} \right)
+\end{equation}
+用法
+\begin{equation}
+  \label{eq:89}
+  \dfrac{\dif u}{\dif t} = \sum\limits_{j} \left( \dfrac{\partial u}{\partial q_{j}} \dot{q}_{j} - \dfrac{\partial u}{\partial p_{j}} \dot{p}_{j} \right) + \dfrac{\partial u}{\partial t} = \sum\limits_{j} \left( \dfrac{\partial u}{\partial q_{j}} \dfrac{\partial H}{\partial p_{j}} - \dfrac{\partial u}{\partial p_{j}} \dfrac{\partial H}{\partial q_{j}} \right) + \dfrac{\partial u}{\partial t}
+\end{equation}
+可以简写为
+\begin{equation}
+  \label{eq:90}
+  \dfrac{\dif u}{\dif t} = \left\{ u, H \right\} + \dfrac{\partial u}{\partial t}
+\end{equation}
 \end{document}
