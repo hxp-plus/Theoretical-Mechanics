@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+\usepackage{caption}
+\usepackage{subcaption}
+\newcommand{\oiint}{\mathop{{\int\!\!\!\!\!\int}\mkern-21mu \bigcirc} {}}
+\newcommand*{\dif}{\mathop{}\!\mathrm{d}}
+
+\usepackage{parskip}
+\setlength{\parindent}{0cm}
+
+
+\author{Xiping Hu}
+\title{理论力学复习}
+
+\begin{document}
+\maketitle
+
+\section{达朗贝尔原理}
+
+对于稳定的系统，有
+\begin{equation}
+  \sum\limits_{\alpha} \mathbf{F}_{\alpha} \cdot \delta \mathbf{r}_{\alpha} = 0
+\end{equation}
+将$\mathbf{F}_{\alpha}$分解为外力$\mathbf{F}_{\alpha}^{e}$和内力（约束力）$\mathbf{f}_{\alpha}$，其中
+\begin{equation}
+  \sum\limits_{\alpha} \mathbf{f}_{\alpha} \cdot \delta \mathbf{r}_{\alpha} = 0
+\end{equation}
+因此有
+\begin{equation}
+  \sum\limits_{\alpha} \mathbf{F}_{\alpha}^{e} \cdot \delta \mathbf{r}_{\alpha} = 0
+\end{equation}
+当问题不是静力学问题的时候，我们添加一个惯性力使之化为静力学问题，由于$\mathbf{F}_{\alpha} - \dot{\mathbf{p}}_{\alpha} = 0$
+\begin{equation}
+  \sum\limits_{\alpha}\left(\mathbf{F}_{\alpha}^{e} - \dot{\mathbf{p}}_{\alpha} \right) \cdot \delta \mathbf{r}_{\alpha} = 0
+\end{equation}
+\end{document}
