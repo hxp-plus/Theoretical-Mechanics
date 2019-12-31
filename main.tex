@@ -150,7 +150,7 @@
 当$Q_{j}$是保守力，势能为$U$时
 \begin{equation}
   \label{eq:25}
-  \frac{\partial U}{\partial q_{j}} = Q_{j}
+  -\frac{\partial U}{\partial q_{j}} = Q_{j}
 \end{equation}
 \begin{equation}
   \label{eq:26}
@@ -159,9 +159,9 @@
 方程\ref{eq:24}可以化为
 \begin{equation}
   \label{27}
-  \frac{\dif}{\dif t} \left( \frac{\partial (T+U)}{\partial \dot{q_{j}}} \right) - \frac{\partial (T+U)}{\partial q_{j}} = 0
+  \frac{\dif}{\dif t} \left( \frac{\partial (T-U)}{\partial \dot{q_{j}}} \right) - \frac{\partial (T-U)}{\partial q_{j}} = 0
 \end{equation}
-定义$L = T + U$，则
+定义$L = T - U$，则
 \begin{equation}
   \label{28}
   \frac{\dif}{\dif t} \left( \frac{\partial L}{\partial \dot{q_{j}}} \right) - \frac{\partial L}{\partial q_{j}} = 0
