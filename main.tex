@@ -16,7 +16,7 @@
 \setlength{\parindent}{0cm}
 
 
-\author{Xiping Hu}
+\author{胡喜平}
 \title{理论力学复习}
 
 \begin{document}
@@ -38,6 +38,132 @@
 \end{equation}
 当问题不是静力学问题的时候，我们添加一个惯性力使之化为静力学问题，由于$\mathbf{F}_{\alpha} - \dot{\mathbf{p}}_{\alpha} = 0$
 \begin{equation}
+  \label{eq:0}
   \sum\limits_{\alpha}\left(\mathbf{F}_{\alpha}^{e} - \dot{\mathbf{p}}_{\alpha} \right) \cdot \delta \mathbf{r}_{\alpha} = 0
+\end{equation}
+这就是达朗贝尔准则
+
+\section{拉格朗日方程}
+
+\subsection{广义坐标}
+位置$\mathbf{r}_{\alpha}$可以由坐标$q_{j}$表示
+\begin{equation}
+  \label{eq:5}
+  \mathbf{r}_{\alpha} = \mathbf{r}_{\alpha} \left( q_{j},t \right)
+\end{equation}
+对它求导
+\begin{equation}
+  \label{eq:6}
+  \dot{\mathbf{r}}_{\alpha} = \frac{\dif \mathbf{r}_{\alpha}}{\dif t} = \sum\limits_{j} \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}} \dot{q_{j}} + \frac{\partial \mathbf{r}_{\alpha}}{\partial t}
+\end{equation}
+进而得到
+\begin{equation}
+  \label{eq:1}
+  \delta \mathbf{r}_{\alpha}= \sum\limits_{j} \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}} \delta q_{j}
+\end{equation}
+
+\subsection{拉格朗日方程的推导}
+又方程\ref{eq:0}可以得到
+\begin{equation}
+  \label{eq:8}
+  \sum\limits_{\alpha} \mathbf{F}_{\alpha}^{e} \cdot \delta \mathbf{r}_{\alpha} =  \sum\limits_{\alpha} \dot{\mathbf{p}}_{\alpha} \cdot \delta \mathbf{r}_{\alpha}
+\end{equation}
+对左边进行展开，代入\ref{eq:1}
+\begin{equation}
+  \label{eq:2}
+  \sum\limits_{\alpha} \mathbf{F}_{\alpha}^{e} \cdot \delta \mathbf{r}_{\alpha} = \sum\limits_{\alpha} \mathbf{F}_{\alpha}^{e} \cdot  \sum\limits_{j} \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}} \delta q_{j} = \sum\limits_{j} \sum\limits_{\alpha} \mathbf{F}_{\alpha}^{e} \cdot \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}} \delta q_{j}
+\end{equation}
+定义广义力$Q_{j}$
+\begin{equation}
+  \label{eq:3}
+  \sum\limits_{\alpha} \mathbf{F}_{\alpha}^{e} \cdot \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}} = Q_{j}
+\end{equation}
+则式\ref{eq:8}左边可以化为
+\begin{equation}
+  \label{eq:11}
+  \sum\limits_{\alpha} \mathbf{F}_{\alpha}^{e} \cdot \delta \mathbf{r}_{\alpha} = \sum\limits_{j} Q_{j} \delta q_{j}
+\end{equation}
+下面我们对右边进行展开，同样，代入\ref{eq:1}
+\begin{equation}
+  \label{eq:12}
+  \sum\limits_{\alpha} \dot{\mathbf{p}}_{\alpha} \cdot \delta \mathbf{r}_{\alpha} = \sum\limits_{\alpha} \dot{\mathbf{p}}_{\alpha} \cdot \sum\limits_{j} \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}} \delta q_{j} = \sum\limits_{\alpha}m_{\alpha} \ddot{\mathbf{r}}_{\alpha}  \cdot \sum\limits_{j} \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}} \delta q_{j} =  \sum\limits_{\alpha} \sum\limits_{j} m_{\alpha} \ddot{\mathbf{r}}_{\alpha}  \cdot  \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}} \delta q_{j}
+\end{equation}
+运用复合函数求导法则
+\begin{equation}
+  \label{eq:13}
+  \frac{\dif}{\dif t} \left( m_{\alpha} \dot{\mathbf{r}}_{\alpha} \cdot \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}} \right) = m_{\alpha} \ddot{\mathbf{r}}_{\alpha}  \cdot  \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}} + m_{\alpha} \dot{\mathbf{r}}_{\alpha} \cdot \frac{\dif}{\dif t} \left(  \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}}  \right)
+\end{equation}
+即
+\begin{equation}
+  \label{eq:14}
+  m_{\alpha} \ddot{\mathbf{r}}_{\alpha}  \cdot  \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}} = \frac{\dif}{\dif t} \left( m_{\alpha} \dot{\mathbf{r}}_{\alpha} \cdot \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}} \right) -  m_{\alpha} \dot{\mathbf{r}}_{\alpha} \cdot \frac{\dif}{\dif t} \left(  \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}}  \right)
+\end{equation}
+把\ref{eq:14}代入\ref{eq:12}，得到
+\begin{equation}
+  \label{eq:15}
+  \sum\limits_{\alpha} \dot{\mathbf{p}}_{\alpha} \cdot \delta \mathbf{r}_{\alpha} = \sum\limits_{\alpha} \sum\limits_{j} \left[ \frac{\dif}{\dif t} \left( m_{\alpha} \dot{\mathbf{r}}_{\alpha} \cdot \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}} \right) -  m_{\alpha} \dot{\mathbf{r}}_{\alpha} \cdot \frac{\dif}{\dif t} \left(  \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}}  \right) \right]\delta q_{j}
+\end{equation}
+因为
+\begin{equation}
+  \frac{\dif}{\dif t} \left(  \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}} \right) = \frac{\partial \dot{\mathbf{r}}_{\alpha}}{\partial q_{j}}
+\end{equation}
+我们得到
+\begin{equation}
+  \label{eq:17}
+  \sum\limits_{\alpha} \dot{\mathbf{p}}_{\alpha} \cdot \delta \mathbf{r}_{\alpha} = \sum\limits_{\alpha} \sum\limits_{j} \left[ \frac{\dif}{\dif t} \left( m_{\alpha} \dot{\mathbf{r}}_{\alpha} \cdot \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}} \right) -  m_{\alpha} \dot{\mathbf{r}}_{\alpha} \cdot  \frac{\partial \dot{\mathbf{r}}_{\alpha}}{\partial q_{j}} \right]\delta q_{j}
+\end{equation}
+对\ref{eq:6}求偏导
+\begin{equation}
+  \label{eq:18}
+  \frac{\partial \dot{\mathbf{r}}_{\alpha}}{\partial \dot{q_{j}}} = \frac{\partial \mathbf{r}_{\alpha}}{\partial q_{j}}
+\end{equation}
+带入\ref{eq:17}
+\begin{equation}
+  \label{eq:19}
+  \sum\limits_{\alpha} \dot{\mathbf{p}}_{\alpha} \cdot \delta \mathbf{r}_{\alpha} = \sum\limits_{\alpha} \sum\limits_{j} \left[ \frac{\dif}{\dif t} \left( m_{\alpha} \dot{\mathbf{r}}_{\alpha} \cdot \frac{\partial \dot{\mathbf{r}}_{\alpha}}{\partial \dot{q_{j}}} \right) -  m_{\alpha} \dot{\mathbf{r}}_{\alpha} \cdot  \frac{\partial \dot{\mathbf{r}}_{\alpha}}{\partial q_{j}} \right]\delta q_{j}
+\end{equation}
+将\ref{eq:11}和\ref{eq:19}代入\ref{eq:8}
+\begin{equation}
+  \label{eq:20}
+  \sum\limits_{\alpha} \sum\limits_{j} \left[ \frac{\dif}{\dif t} \left( m_{\alpha} \dot{\mathbf{r}}_{\alpha} \cdot \frac{\partial \dot{\mathbf{r}}_{\alpha}}{\partial \dot{q_{j}}} \right) -  m_{\alpha} \dot{\mathbf{r}}_{\alpha} \cdot  \frac{\partial \dot{\mathbf{r}}_{\alpha}}{\partial q_{j}} \right]\delta q_{j} = \sum\limits_{j} Q_{j} \delta q_{j}
+\end{equation}
+定义动能$T = \sum\limits_{\alpha} \frac{1}{2} m_{\alpha} \dot{\mathbf{r}}_{\alpha}^{2}$
+\begin{equation}
+  \label{eq:21}
+  \partial T = \partial \left( \sum\limits_{\alpha} \frac{1}{2} m_{\alpha} \dot{\mathbf{r}}_{\alpha}^{2} \right) = \sum\limits_{\alpha} m_{\alpha} \dot{\mathbf{r}}_{\alpha} \cdot \partial \dot{\mathbf{r}}_{\alpha}
+\end{equation}
+将\ref{eq:21}代入\ref{eq:20}
+\begin{equation}
+  \label{eq:22}
+  \sum\limits_{j} \left[ \frac{\dif}{\dif t} \left( \frac{\partial T}{\partial \dot{q_{j}}} \right) - \frac{\partial T}{\partial q_{j}} \right]\delta q_{j} = \sum\limits_{j} Q_{j} \delta q_{j}
+\end{equation}
+因此
+\begin{equation}
+  \label{eq:23}
+  \frac{\dif}{\dif t} \left( \frac{\partial T}{\partial \dot{q_{j}}} \right) - \frac{\partial T}{\partial q_{j}} = Q_{j}
+\end{equation}
+即
+\begin{equation}
+  \label{eq:24}
+  \frac{\dif}{\dif t} \left( \frac{\partial T}{\partial \dot{q_{j}}} \right) - \left( \frac{\partial T}{\partial q_{j}} + Q_{j} \right) = 0
+\end{equation}
+当$Q_{j}$是保守力，势能为$U$时
+\begin{equation}
+  \label{eq:25}
+  \frac{\partial U}{\partial q_{j}} = Q_{j}
+\end{equation}
+\begin{equation}
+  \label{eq:26}
+  \frac{\partial U}{\partial \dot{q_{j}}} = 0
+\end{equation}
+方程\ref{eq:24}可以化为
+\begin{equation}
+  \label{27}
+  \frac{\dif}{\dif t} \left( \frac{\partial (T+U)}{\partial \dot{q_{j}}} \right) - \frac{\partial (T+U)}{\partial q_{j}} = 0
+\end{equation}
+定义$L = T + U$，则
+\begin{equation}
+  \label{28}
+  \frac{\dif}{\dif t} \left( \frac{\partial L}{\partial \dot{q_{j}}} \right) - \frac{\partial L}{\partial q_{j}} = 0
 \end{equation}
 \end{document}
