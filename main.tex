@@ -211,7 +211,7 @@
 \end{equation}
 哈密顿量守恒
 
-\section{Noether定理，广义动量}
+\section{Noether定理与广义动量}
 
 由\ref{eq:33}
 \begin{equation}
@@ -244,4 +244,100 @@
   p_{j} = \frac{\partial L}{\partial \dot{q_{j}}}
 \end{equation}
 则$p_{j} = \mathrm{const}$，广义动量守恒
+
+\section{欧拉变分原理}
+
+设
+\begin{equation}
+  \label{eq:43}
+  J = \int_{x_{1}}^{x_{2}} f \left\{ y(x),y'(x);x  \right\} \dif x
+\end{equation}
+$J$是函数$y(x)$的函数，求$J$的极值函数，方法是另
+\begin{equation}
+  \label{eq:44}
+  y \left( \alpha ,x \right) = y(x) + \alpha \eta (x)
+\end{equation}
+则
+\begin{equation}
+  \label{eq:45}
+  y' \left( \alpha ,x \right) = y'(x) + \alpha \eta' (x)
+\end{equation}
+\begin{equation}
+  \label{eq:46}
+  \frac{\partial y}{\partial \alpha} = \eta (x)
+\end{equation}
+\begin{equation}
+  \label{eq:47}
+  \frac{\partial y'}{\partial \alpha} = \eta' (x)
+\end{equation}
+求解
+\begin{equation}
+  \label{eq:48}
+  \frac{\partial J}{\partial \alpha} = 0
+\end{equation}
+解法为
+\begin{equation}
+  \label{eq:49}
+  \frac{\partial J}{\partial \alpha} = \frac{\partial}{\partial \alpha} \int_{x_{1}}^{x_{2}} f \left\{ y(x),y'(x);x  \right\} \dif x =  \int_{x_{1}}^{x_{2}} \left( \frac{\partial f}{\partial y} \frac{\partial y}{\partial \alpha} + \frac{\partial f}{\partial y'} \frac{\partial y'}{\partial \alpha} \right) \dif x
+\end{equation}
+将\ref{eq:45}和\ref{eq:46}代入
+\begin{equation}
+  \label{eq:50}
+  \frac{\partial J}{\partial \alpha} = \int_{x_{1}}^{x_{2}} \left( \frac{\partial f}{\partial y} \eta (x) + \frac{\partial f}{\partial y'} \eta' (x) \right) \dif x = \int_{x_{1}}^{x_{2}} \frac{\partial f}{\partial y} \eta (x) \dif x + \int_{x_{1}}^{x_{2}} \frac{\partial f}{\partial y'} \eta' (x) \dif x
+\end{equation}
+利用分步积分法算式\ref{eq:50}的最后一项
+\begin{equation}
+  \label{eq:51}
+   \int_{x_{1}}^{x_{2}} \frac{\partial f}{\partial y'} \eta'(x) \dif x =  \int_{x_{1}}^{x_{2}} \frac{\partial f}{\partial y'} \dif \eta (x) = \frac{\partial f}{\partial y'} \left[ \eta (x_{1}) - \eta (x_{2}) \right] - \int_{x_{1}}^{x_{2}} \eta (x) \dif \left( \frac{\partial f}{\partial y'} \right)
+ \end{equation}
+ 由于式\ref{eq:44}中$y(\alpha,x_{1}) = y(x_{1})$且$y(\alpha,x_{2}) = y(x_{2})$
+
+ \begin{equation}
+   \label{eq:52}
+    \eta (x_{1}) = \eta (x_{2}) = 0
+  \end{equation}
+代入\ref{eq:51}
+ \begin{equation}
+   \label{eq:53}
+   \int_{x_{1}}^{x_{2}} \frac{\partial f}{\partial y'} \eta'(x) \dif x = - \int_{x_{1}}^{x_{2}} \eta (x) \dif \left( \frac{\partial f}{\partial y'} \right) = - \int_{x_{1}}^{x_{2}} \eta (x) \frac{\dif}{\dif x} \left( \frac{\partial f}{\partial y'} \right) \dif x
+ \end{equation}
+ 代入\ref{eq:50}
+ \begin{equation}
+   \label{eq:54}
+   \frac{\partial J}{\partial \alpha} = \int_{x_{1}}^{x_{2}} \frac{\partial f}{\partial y} \eta (x) \dif x - \int_{x_{1}}^{x_{2}} \eta (x) \frac{\dif}{\dif x} \left( \frac{\partial f}{\partial y'} \right) \dif x = \int_{x_{1}}^{x_{2}} \left[ \frac{\partial f}{\partial y} -  \frac{\dif}{\dif x} \left( \frac{\partial f}{\partial y'} \right) \right]\eta (x) \dif x = 0
+\end{equation}
+ 因此
+\begin{equation}
+   \label{eq:55}
+   \frac{\partial f}{\partial y} -  \frac{\dif}{\dif x} \left( \frac{\partial f}{\partial y'} \right) = 0
+ \end{equation}
+ 我们也可以用$\delta$记号表示，由式\ref{eq:54}和\ref{eq:46}
+ \begin{equation}
+   \label{eq:56}
+    \frac{\partial J}{\partial \alpha} \dif \alpha = \int_{x_{1}}^{x_{2}} \left[ \frac{\partial f}{\partial y} -  \frac{\dif}{\dif x} \left( \frac{\partial f}{\partial y'} \right) \right] \frac{\partial y}{\partial \alpha} \dif \alpha \dif x = 0
+  \end{equation}
+  即
+  \begin{equation}
+    \label{eq:57}
+    \delta J = \int_{x_{1}}^{x_{2}} \left[ \frac{\partial f}{\partial y} -  \frac{\dif}{\dif x} \left( \frac{\partial f}{\partial y'} \right) \right] \delta  y \dif x = 0
+  \end{equation}
+
+  \section{哈密顿原理}
+
+  哈密顿原理的表示形式为
+  \begin{equation}
+    \label{eq:58}
+    I = \int_{t_{1}}^{t_{2}} L \left( q,\dot{q},t \right) \dif t= 0
+  \end{equation}
+  或
+  \begin{equation}
+    \label{eq:59}
+    \delta I = \delta \int_{t_{1}}^{t_{2}} L \left( q,\dot{q},t \right) \dif t= 0
+  \end{equation}
+  由式\ref{eq:55}我们已经知道，式\ref{eq:59}的解是
+  \begin{equation}
+    \label{eq:60}
+    \frac{\partial L}{\partial q_{j}} -  \frac{\dif}{\dif t} \left( \frac{\partial L}{\partial \dot{q}_{j}} \right) = 0
+  \end{equation}
+  即拉格朗日方程
 \end{document}
