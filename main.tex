@@ -476,7 +476,7 @@ $x$和$y$之间有约束
 \end{equation}
 \begin{equation}
   \label{eq:86}
-  \dot{p}_{j} =  \dfrac{\partial H}{\partial q_{j}}
+  \dot{p}_{j} = -\dfrac{\partial H}{\partial q_{j}}
 \end{equation}
 \begin{equation}
   \label{eq:87}
@@ -492,7 +492,7 @@ $x$和$y$之间有约束
 用法
 \begin{equation}
   \label{eq:89}
-  \dfrac{\dif u}{\dif t} = \sum\limits_{j} \left( \dfrac{\partial u}{\partial q_{j}} \dot{q}_{j} - \dfrac{\partial u}{\partial p_{j}} \dot{p}_{j} \right) + \dfrac{\partial u}{\partial t} = \sum\limits_{j} \left( \dfrac{\partial u}{\partial q_{j}} \dfrac{\partial H}{\partial p_{j}} - \dfrac{\partial u}{\partial p_{j}} \dfrac{\partial H}{\partial q_{j}} \right) + \dfrac{\partial u}{\partial t}
+  \dfrac{\dif u}{\dif t} = \sum\limits_{j} \left( \dfrac{\partial u}{\partial q_{j}} \dot{q}_{j} + \dfrac{\partial u}{\partial p_{j}} \dot{p}_{j} \right) + \dfrac{\partial u}{\partial t} = \sum\limits_{j} \left( \dfrac{\partial u}{\partial q_{j}} \dfrac{\partial H}{\partial p_{j}} - \dfrac{\partial u}{\partial p_{j}} \dfrac{\partial H}{\partial q_{j}} \right) + \dfrac{\partial u}{\partial t}
 \end{equation}
 可以简写为
 \begin{equation}
