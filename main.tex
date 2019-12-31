@@ -291,7 +291,6 @@ $J$是函数$y(x)$的函数，求$J$的极值函数，方法是另
    \int_{x_{1}}^{x_{2}} \frac{\partial f}{\partial y'} \eta'(x) \dif x =  \int_{x_{1}}^{x_{2}} \frac{\partial f}{\partial y'} \dif \eta (x) = \frac{\partial f}{\partial y'} \left[ \eta (x_{1}) - \eta (x_{2}) \right] - \int_{x_{1}}^{x_{2}} \eta (x) \dif \left( \frac{\partial f}{\partial y'} \right)
  \end{equation}
  由于式\ref{eq:44}中$y(\alpha,x_{1}) = y(x_{1})$且$y(\alpha,x_{2}) = y(x_{2})$
-
  \begin{equation}
    \label{eq:52}
     \eta (x_{1}) = \eta (x_{2}) = 0
@@ -339,5 +338,80 @@ $J$是函数$y(x)$的函数，求$J$的极值函数，方法是另
     \label{eq:60}
     \frac{\partial L}{\partial q_{j}} -  \frac{\dif}{\dif t} \left( \frac{\partial L}{\partial \dot{q}_{j}} \right) = 0
   \end{equation}
-  即拉格朗日方程
+  即拉格朗日方程\ref{eq:28}
+
+\section{拉格朗日乘子与约束条件}
+
+\subsection{带约束的欧拉变分原理}
+
+有两个关于$x$的函数$y(x)$、$z(x)$，求
+\begin{equation}
+  \label{eq:61}
+  J = \int_{x_{1}}^{x_{2}} f \left\{ y(x),y'(x),z(x),z'(x);x \right\}
+\end{equation}
+的极值，有约束
+\begin{equation}
+  \label{eq:62}
+  g \left\{ y(x),z(x);x \right\} = 0
+\end{equation}
+由\ref{eq:61}
+\begin{equation}
+  \label{eq:63}
+  \delta J = \int_{x_{1}}^{x_{2}} \left[ \left( \dfrac{\partial f}{\partial y} - \dfrac{\dif}{\dif x} \dfrac{\partial f}{\partial y'} \right) \delta y  + \left( \dfrac{\partial f}{\partial z} - \dfrac{\dif}{\dif x} \dfrac{\partial f}{\partial z'} \right) \delta z \right] \dif x = 0
+\end{equation}
+\begin{equation}
+  \label{eq:64}
+  \delta g = \dfrac{\partial g}{\partial y} \delta y + \dfrac{\partial g}{\partial z} \delta z = 0
+\end{equation}
+引入拉格朗日乘子$\lambda (x)$
+\begin{equation}
+  \label{eq:65}
+  \lambda (x) \delta g = \lambda (x) \left( \dfrac{\partial g}{\partial y} \delta y + \dfrac{\partial g}{\partial z} \delta z \right) = 0
+\end{equation}
+将\ref{eq:65}代入\ref{eq:63}
+\begin{equation}
+  \label{eq:66}
+  \int_{x_{1}}^{x_{2}} \left[ \left( \dfrac{\partial f}{\partial y} - \dfrac{\dif}{\dif x} \dfrac{\partial f}{\partial y'} + \lambda (x) \dfrac{\partial g}{\partial y} \right) \delta y  + \left( \dfrac{\partial f}{\partial z} - \dfrac{\dif}{\dif x} \dfrac{\partial f}{\partial z'}  + \lambda (x) \dfrac{\partial g}{\partial z} \right) \delta z \right] \dif x = 0
+\end{equation}
+因此，我们有
+\begin{equation}
+  \label{eq:67}
+  \dfrac{\partial f}{\partial y} - \dfrac{\dif}{\dif x} \dfrac{\partial f}{\partial y'} + \lambda (x) \dfrac{\partial g}{\partial y} = 0
+\end{equation}
+和
+\begin{equation}
+  \label{eq:68}
+  \dfrac{\partial f}{\partial z} - \dfrac{\dif}{\dif x} \dfrac{\partial f}{\partial z'}  + \lambda (x) \dfrac{\partial g}{\partial z} = 0
+\end{equation}
+\subsection{带不定乘子的拉格朗日方程}
+考察二维平面上的运动，拉格朗日量
+\begin{equation}
+  \label{eq:69}
+  L \left( x, \dot{x}, y, \dot{y}; t \right)
+\end{equation}
+$x$和$y$之间有约束
+\begin{equation}
+  \label{eq:70}
+  g \left( x, y ;t \right) = 0
+\end{equation}
+由\ref{eq:67}和\ref{eq:68}可知
+\begin{equation}
+  \label{eq:71}
+  \dfrac{\partial L}{\partial x} - \dfrac{\dif}{\dif t} \dfrac{\partial L}{\partial \dot{x}} + \lambda (t) \dfrac{\partial g}{\partial x} = 0
+\end{equation}
+\begin{equation}
+  \label{eq:72}
+  \dfrac{\partial L}{\partial y} - \dfrac{\dif}{\dif t} \dfrac{\partial L}{\partial \dot{y}}  + \lambda (t) \dfrac{\partial g}{\partial y} = 0
+\end{equation}
+其中
+\begin{equation}
+  \label{eq:73}
+  Q_{x} = \lambda (t) \dfrac{\partial g}{\partial x} 
+\end{equation}
+\begin{equation}
+  \label{eq:74}
+  Q_{y} =  \lambda (t) \dfrac{\partial g}{\partial y} 
+\end{equation}
+为约束力
+
 \end{document}
