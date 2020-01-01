@@ -499,4 +499,164 @@ $x$和$y$之间有约束
   \label{eq:90}
   \dfrac{\dif u}{\dif t} = \left\{ u, H \right\} + \dfrac{\partial u}{\partial t}
 \end{equation}
+
+\section{有心运动}
+
+\subsection{基本概念}
+
+考虑两个质点的系统，系统的质心是$R$，定义等效质量$\mu$
+\begin{equation}
+  \label{eq:91}
+  \mu = \dfrac{m_{1} m_{2}}{m_{1} + m_{2}} 
+\end{equation}
+则系统的动能为
+\begin{equation}
+  \label{eq:92}
+  T = \dfrac{1}{2} \left( m_{1} + m_{2} \right) \dot{\mathbf{R}}^{2} + \dfrac{1}{2} \mu \dot{\mathbf{r}}^{2}
+\end{equation}
+系统的势能为$U(r)$，则
+\begin{equation}
+  \label{eq:93}
+  L = T - U =  \dfrac{1}{2} \left( m_{1} + m_{2} \right) \dot{\mathbf{R}}^{2} + \dfrac{1}{2} \mu \dot{\mathbf{r}}^{2} - U(r)
+\end{equation}
+因为有
+\begin{equation}
+  \label{eq:94}
+  \left( m_{1} + m_{2} \right)\ddot{\mathbf{R}} = 0
+\end{equation}
+式\ref{eq:93}的第一项可以丢弃
+\begin{equation}
+  \label{eq:95}
+  L = \dfrac{1}{2} \mu \dot{\mathbf{r}}^{2} - U(r)
+\end{equation}
+用极坐标表示
+\begin{equation}
+  \label{eq:96}
+  L = \dfrac{1}{2} \mu \left( \dot{r}^{2} + r^{2} \dot{\theta}^{2} \right) - U(r)
+\end{equation}
+广义动量为
+\begin{equation}
+  \label{eq:97}
+  l = p_{\theta} = \dfrac{\partial L}{\partial \dot{\theta}} = \mu r^{2} \dot{\theta} = \mathrm{const} 
+\end{equation}
+面积速度为
+\begin{equation}
+  \label{eq:98}
+  \dfrac{\dif A }{\dif t} = \dfrac{1}{2} r^{2} \dif \theta = \dfrac{l}{2\mu} = \mathrm{const}
+\end{equation}
+总能量为
+\begin{equation}
+  \label{eq:99}
+  E = T + U = \dfrac{1}{2} \mu \left( \dot{r}^{2} + r^{2} \dot{\theta}^{2} \right) + U(r) = \sqrt{ \dfrac{1}{2} \mu \dot{r}^{2} + \dfrac{1}{2} \dfrac{l^{2}}{\mu r^{2}} + U(r) }
+\end{equation}
+
+\subsection{运动方程的求解}
+
+\subsubsection{第一种办法}
+
+可以用式\ref{eq:97}和式\ref{eq:99}解出$\dot{\theta}$和$\dot{r}$
+\begin{equation}
+  \label{eq:100}
+  \dot{\theta} = \dfrac{l}{\mu r^{2}} 
+\end{equation}
+\begin{equation}
+  \label{eq:101}
+  \dot{r} = \pm \sqrt{\dfrac{2}{\mu} \left[ E - U(r) \right] - \dfrac{l^{2}}{\mu^{2} r^{2}} }
+\end{equation}
+并用
+\begin{equation}
+  \label{eq:102}
+  \dfrac{\dif \theta}{\dif r} = \dfrac{\dot{\theta}}{\dot{r}} 
+\end{equation}
+并积分解出
+\begin{equation}
+  \label{eq:103}
+  \theta (r) = \pm \int \dfrac{\dot{\theta}}{\dot{r}} \dif r + \mathrm{const}= \pm \int \dfrac{\dfrac{l}{\mu r^{2}}}{\sqrt{\dfrac{2}{\mu} \left[ E - U(r) \right] - \dfrac{l^{2}}{\mu^{2} r^{2}} }} \dif r + \mathrm{const}
+\end{equation}
+
+\subsubsection{第二种解法}
+
+拉格朗日方程
+\begin{equation}
+  \label{eq:104}
+  \dfrac{\partial L}{\partial r} - \dfrac{\dif}{\dif t} \dfrac{\partial L}{\partial \dot{r}} = 0
+\end{equation}
+将式\ref{eq:96}代入
+\begin{equation}
+  \label{eq:105}
+  \mu r \dot{\theta}^{2} - \dfrac{\partial U}{\partial r} - \mu \ddot{r} = 0
+\end{equation}
+整理得到
+\begin{equation}
+  \label{eq:106}
+  -\mu r \dot{\theta}^{2} + \mu \ddot{r} = - \dfrac{\partial U}{\partial r}
+\end{equation}
+\begin{equation}
+  \label{eq:107}
+  \mu \left( \ddot{r} - r \dot{\theta}^{2} \right) = F(r)
+\end{equation}
+换元，另
+\begin{equation}
+  \label{eq:108}
+  u = \dfrac{1}{r}
+\end{equation}
+则
+\begin{equation}
+  \label{eq:109}
+  \dfrac{\dif^{2} u}{\dif \theta^{2}} = - \dfrac{\mu^{2}}{l^2} r^{2} \ddot{r}  
+\end{equation}
+\begin{equation}
+  \label{eq:110}
+  \ddot{r} = - \dfrac{1}{r^{2}} \dfrac{l^2}{\mu^{2}} \dfrac{\dif^{2} u}{\dif \theta^{2}} = - u^{2} \dfrac{l^2}{\mu^{2}} \dfrac{\dif^{2} u}{\dif \theta^{2}} 
+\end{equation}
+结合
+\begin{equation}
+  \label{eq:111}
+  l = \mu r^{2} \dot{\theta}
+\end{equation}
+即
+\begin{equation}
+  \label{eq:112}
+  \dot{\theta}^{2} = \dfrac{l^{2}}{\mu^{2} r^{4}} 
+\end{equation}
+将\ref{eq:112}与\ref{eq:110}代入\ref{eq:107}
+\begin{equation}
+  \label{eq:113}
+  \mu \left( - u^{2} \dfrac{l^2}{\mu^{2}} \dfrac{\dif^{2} u}{\dif \theta^{2}}  - r \dfrac{l^{2}}{\mu^{2} r^{4}}  \right) = F(r)
+\end{equation}
+\begin{equation}
+  \label{eq:114}
+  \left( - u^{2} \dfrac{l^2}{\mu} \dfrac{\dif^{2} u}{\dif \theta^{2}}  - r \dfrac{l^{2}}{\mu r^{4}}  \right) = F(r)
+\end{equation}
+\begin{equation}
+  \label{eq:115}
+  \left( - u^{2} \dfrac{l^2}{\mu} \dfrac{\dif^{2} u}{\dif \theta^{2}}  - \frac{l^{2}u^{3}}{\mu}  \right) = F(r)
+\end{equation}
+\begin{equation}
+  \label{eq:116}
+    \left( \dfrac{\dif^{2} u}{\dif \theta^{2}}  + u   \right) = - \dfrac{\mu}{u^{2} l^{2}}  F(r)
+\end{equation}
+即
+\begin{equation}
+  \label{eq:117}
+  \dfrac{\dif^{2}}{\dif \theta^{2}}\left( \dfrac{1}{r}  + \dfrac{1}{r}    \right) = - \dfrac{\mu r^{2}}{l^{2}}  F(r)
+\end{equation}
+
+\subsection{有效势能}
+
+由式\ref{eq:103}分母，
+\begin{equation}
+  \label{eq:118}
+    \sqrt{\dfrac{2}{\mu} \left[ E - U(r) \right] - \dfrac{l^{2}}{\mu^{2} r^{2}} } = \sqrt{\dfrac{2}{\mu} \left[ E - \left( U(r)  + \dfrac{l^{2}}{2 \mu r^{2}} \right) \right]}
+\end{equation}
+定义有效势能$V(r)$
+\begin{equation}
+  \label{eq:119}
+  V(r) = U(r)  + \dfrac{l^{2}}{2 \mu r^{2}}
+\end{equation}
+离心势能
+\begin{equation}
+  \label{eq:120}
+  U_{C}(r) = \dfrac{l^{2}}{2 \mu r^{2}}
+\end{equation}
 \end{document}
