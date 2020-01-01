@@ -659,4 +659,48 @@ $x$和$y$之间有约束
   \label{eq:120}
   U_{C}(r) = \dfrac{l^{2}}{2 \mu r^{2}}
 \end{equation}
+
+\section{刚体的运动}
+
+转动惯量的张量定义为
+
+\begin{equation}
+  \label{eq:121}
+  \mathbf{I} = \left[ \begin{array}{ccc}
+                       \sum\limits_{\alpha} m_{\alpha} \left( x_{\alpha ,2} x_{\alpha ,3} \right) & - \sum\limits_{\alpha} m_{\alpha} x_{\alpha ,1} x_{\alpha, 2} & - \sum\limits_{\alpha} m_{\alpha} x_{\alpha ,1} x_{\alpha, 3}\\
+                       - \sum\limits_{\alpha} m_{\alpha} x_{\alpha ,2} x_{\alpha, 1} & \sum\limits_{\alpha} m_{\alpha} \left( x_{\alpha ,1} x_{\alpha ,3} \right) & - \sum\limits_{\alpha} m_{\alpha} x_{\alpha ,2} x_{\alpha, 3}\\
+                       - \sum\limits_{\alpha} m_{\alpha} x_{\alpha ,3} x_{\alpha, 1} & - \sum\limits_{\alpha} m_{\alpha} x_{\alpha ,3} x_{\alpha, 2} & \sum\limits_{\alpha} m_{\alpha} \left( x_{\alpha ,1} x_{\alpha ,2} \right)
+                      \end{array} \right ] 
+\end{equation}
+定义
+\begin{equation}
+  \label{eq:122}
+  \mathbf{I} = \left[
+    \begin{array}{ccc}
+                       I_{11} & I_{12} & I_{13} \\
+		    I_{21} & I_{22} & I_{23} \\
+		    I_{31} & I_{32} & I_{33}
+
+    \end{array} \right ]
+\end{equation}
+刚体的转动动能
+\begin{equation}
+  \label{eq:123}
+  T_{rot} = \dfrac{1}{2} \mathbf{\omega}' \mathbf{I} \mathbf{\omega}
+\end{equation}
+这里面的$\mathbf{\omega}$是列向量，刚体的角动量
+\begin{equation}
+  \label{eq:124}
+  \mathbf{L} = \mathbf{I} \mathbf{\omega}
+\end{equation}
+$\mathbf{I}$是对称的，可以相似对角化相似对角化后的转动惯量
+\begin{equation}
+  \label{eq:125}
+  \mathbf{I'} = \mathbf{\lambda}' \mathbf{I} \mathbf{\lambda}
+\end{equation}
+\begin{equation}
+  \label{eq:126}
+  \mathbf{\omega}' =  \mathbf{\lambda}' \mathbf{\omega}
+\end{equation}
+
 \end{document}
