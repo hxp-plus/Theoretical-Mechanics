@@ -662,6 +662,8 @@ $x$和$y$之间有约束
 
 \section{刚体的运动}
 
+\subsection{转动惯量的张量}
+
 转动惯量的张量定义为
 
 \begin{equation}
@@ -703,4 +705,23 @@ $\mathbf{I}$是对称的，可以相似对角化相似对角化后的转动惯�
   \mathbf{\omega}' =  \mathbf{\lambda}' \mathbf{\omega}
 \end{equation}
 
+\subsection{欧拉方程}
+
+\begin{equation}
+  \label{eq:127}
+  \left( \dfrac{\dif \mathbf{L}}{\dif t}  \right)_{fixed} = \left( \dfrac{\dif \mathbf{L}}{\dif t}  \right)_{body} + \mathbf{\omega} \times \mathbf{L} = \mathbf{N}
+\end{equation}
+经过计算可以得到
+\begin{equation}
+  \label{eq:128}
+  I_{1} \dot{\omega}_{1} - \left( I_{2} - I_{3} \right)\omega_{2} \omega_{3} = N_{1}
+\end{equation}
+\begin{equation}
+  \label{eq:129}
+  I_{2} \dot{\omega}_{2} - \left( I_{3} - I_{1} \right)\omega_{3} \omega_{1} = N_{2}
+\end{equation}
+\begin{equation}
+  \label{eq:130}
+  I_{3} \dot{\omega}_{3} - \left( I_{1} - I_{2} \right)\omega_{1} \omega_{2} = N_{3}
+\end{equation}
 \end{document}
