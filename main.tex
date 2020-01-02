@@ -11,7 +11,9 @@
 \usepackage{subcaption}
 \newcommand{\oiint}{\mathop{{\int\!\!\!\!\!\int}\mkern-21mu \bigcirc} {}}
 \newcommand*{\dif}{\mathop{}\!\mathrm{d}}
-
+\usepackage{bm}
+\let\Oldmathbf\mathbf
+\renewcommand{\mathbf}[1]{\boldsymbol{\Oldmathbf{#1}}}
 \usepackage{parskip}
 \setlength{\parindent}{0cm}
 
